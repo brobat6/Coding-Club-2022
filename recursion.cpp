@@ -77,6 +77,16 @@ int the_cooler_custom_pow(int a, int b) {
     }
 }
 
+int binpow(int a, int b) {
+    int res = 1;
+    while (b > 0) {
+        if (b & 1) res = res * a % MOD;
+        a = a * a % MOD;
+        b >>= 1;
+    }   
+    return res % MOD;
+}
+
 /* 
 QUESTIONS - 
 Q1. Find the number of binary strings of length N which don't have 2 consecutive 0s
